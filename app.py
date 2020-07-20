@@ -1,18 +1,26 @@
+"""
+The main app file for the server. 
+Contains all the callbacks and renders the layout.
+"""
+
+
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-from dash.dependencies import Input, Output, State
 import pandas as pd
 import numpy as np
 import urllib
-from Layouts.layout import layout_main
-from Layouts.tab1_layout import tab_single, Columns
-from Layouts.tab2_layout import tab_batch
 import json
 import base64
 import datetime
 import io
 import dash_table
+from dash.dependencies import Input, Output, State
+from Layouts.layout import layout_main
+
+"""
+Sylesheets and Server initialization
+"""
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets= external_stylesheets)
@@ -99,6 +107,7 @@ def post_request(request):
 		print(json.loads(error.read()))
 		return json.loads(error.read())
 
+
 """
 Callback functions
 """
@@ -163,7 +172,7 @@ def update_output(str_contents):
 
 
 """
-Main code
+Main server instantiation.
 """
 
 

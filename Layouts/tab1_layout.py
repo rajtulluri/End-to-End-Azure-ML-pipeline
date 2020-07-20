@@ -1,6 +1,15 @@
+"""
+Layout for the single request tab.
+Contains HTML layout rendered by Main layout.
+"""
+
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+
+"""
+List intializations for input components
+"""
 
 Columns= [
 	"age", "workclass", "fnlwgt", "education",
@@ -16,6 +25,9 @@ Types= [
 	'number', 'text'
 ]
 
+"""
+Tab layout variable
+"""
 
 tab_single = html.Div(children= [
 	html.Center(children=[

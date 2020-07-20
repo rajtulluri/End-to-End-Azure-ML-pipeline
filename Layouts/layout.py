@@ -1,3 +1,9 @@
+"""
+Layout file for the server.
+Contains HTML layout for the app file to render.
+"""
+
+
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -5,19 +11,9 @@ from Layouts.tab2_layout import tab_batch
 from Layouts.tab1_layout import tab_single
 import dash_table
 
-Columns= [
-	"age", "workclass", "fnlwgt", "education",
-    "education-num", "marital-status", "occupation",
-    "relationship", "race", "sex", "capital-gain",
-    "capital-loss", "hours-per-week", "native-country"
-]
-
-Types= [
-	'number', 'text', 'number', 'text',
-	'number', 'text', 'text', 'text',
-	'text', 'text', 'number', 'number',
-	'number', 'text'
-]
+"""
+Main layout variable
+"""
 
 layout_main = html.Div(children= [
 	html.Center(children=[

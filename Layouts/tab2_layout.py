@@ -1,6 +1,15 @@
+"""
+Layout for the batch request tab.
+Contains HTML layout rendered by main layout file.
+"""
+
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+
+"""
+Tab layout variable
+"""
 
 tab_batch = html.Div(children= [
 	html.Center(children=[
