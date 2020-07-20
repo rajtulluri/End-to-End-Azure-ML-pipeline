@@ -30,15 +30,6 @@ The Layouts folder contains various layout files for the app to render.
 
 ### Heroku deployment
 
-#### Conda environment
-Fork the repository, create a conda env
- 
-    conda create -n env_name python=3.6
-    
-Activate the env using,
-
-    conda activate env_name
-    
 Install the following dependencies in the env using pip
 
     dash
@@ -72,36 +63,15 @@ Run the following commands in succession to deploy the app on heroku
 The heroku server will provide the deployed application's link.
 The app above can be viewed at - https://azure-ml-pipeline.herokuapp.com/
 
-#### OS environment
-Fork the repository, and follow the steps,
-Install the following dependencies using pip
-
-    dash
-    pandas
-    numpy
-    gunicorn
-    flask
-    urllib
-
-Use the following command
-
-    pip install _package_
+If using a conda environment, then before the above steps, execute the following
+Create a conda env
+ 
+    conda create -n env_name python=3.6
     
-Create a file named Procfile and fill its contents with,
+Activate the env using,
 
-    web: gunicorn app:server
-
-The Procfile has the instance of the server which the heroku platform will run
-Create a new file requirements.txt with a list of all dependencies,
-
-    pip freeze > requirements.txt
+    conda activate env_name
     
-Run the following commands in succession to deploy the app on heroku
+Continue with the steps mentioned above.
 
-    heroku create my_app
-    git add .
-    git commit -m "Initial push"
-    git push heroku master
-    heroku ps:scale web=1
-    
-The heroku server will provide the deployed application's link.
+NOTE:- Build a personal API using the Azure ML studio. Since it is a paid service, the API invovled in the app is no longer active.
