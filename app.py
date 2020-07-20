@@ -17,6 +17,7 @@ import io
 import dash_table
 from dash.dependencies import Input, Output, State
 from Layouts.layout import layout_main
+from Layouts.tab1_layout import Columns
 
 """
 Sylesheets and Server initialization
