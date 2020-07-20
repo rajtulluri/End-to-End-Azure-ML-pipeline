@@ -77,8 +77,8 @@ def build_packet(features):
 	}
 	body = str.encode(json.dumps(data))
 
-	url = "https://ussouthcentral.services.azureml.net/workspaces/d3987bf891554ed48a30ee0cb1e4ac01/services/e687a07218d14071af7162f286af6902/execute?api-version=2.0&details=true"
-	api_key = "hHHlBuQhN7ouQ3RtNxltg9M5S7+4m+pbtzmjd2g6AvNJbn6mlE/yChlQ7X7SbMd6q5Nsi4MntJTh/3But+GUeQ=="
+	url = open('./Resources/URL','r').read().strip()
+	api_key = open('./Resources/API_key','r').read().strip()
 	headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
 
 	req = urllib.request.Request(url, body, headers)
