@@ -68,8 +68,8 @@ def build_packet(features):
 	}
 	body = str.encode(json.dumps(data))
 
-	url = "https://ussouthcentral.services.azureml.net/workspaces/d3987bf891554ed48a30ee0cb1e4ac01/services/60cb1919f8fc466f8ef1030352807ac0/execute?api-version=2.0&details=true "
-	api_key = "C36R9Tj6f6oueqtZasbgFO+SX4MZHIts7bYKaaPrqaNpZzCEyWyBOty1FDNCsnIFXP6FkD/h23TuGTVr6ej1Tw=="
+	url = "https://ussouthcentral.services.azureml.net/workspaces/d3987bf891554ed48a30ee0cb1e4ac01/services/e687a07218d14071af7162f286af6902/execute?api-version=2.0&details=true"
+	api_key = "hHHlBuQhN7ouQ3RtNxltg9M5S7+4m+pbtzmjd2g6AvNJbn6mlE/yChlQ7X7SbMd6q5Nsi4MntJTh/3But+GUeQ=="
 	headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
 
 	req = urllib.request.Request(url, body, headers)
@@ -91,7 +91,7 @@ def post_request(request):
 		response = urllib.request.urlopen(request)
 		result = response.read()
 		result = json.loads(result)["Results"]["output1"]["value"]["Values"]
-		return "Salary category predicted: {}".format(result[0][0])
+		return result[0][0]
 
 	except urllib.error.HTTPError as error:
 		print("The request failed with status code: " + str(error.code))
@@ -125,7 +125,7 @@ def model_prediction(clicks, *features):
 
 	response = post_request(request)
 
-	return response
+	return "Salary category predicted: {}".format(response)
 
 
 @app.callback(
@@ -146,7 +146,6 @@ def update_output(str_contents):
 	decoded = base64.b64decode(string)
 	df = pd.read_csv(io.StringIO(decoded.decode('utf-8')))
 	df['predicted_label'] = ""
-	print('Here')
 	for ind,row in df.iterrows():
 		row.income= '?'
 		request = build_packet(list(row.values[:-1]))
