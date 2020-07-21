@@ -7,8 +7,11 @@
 The Machine Learning model built on Azure ML studio, predicts the Adult income category (>50k or <=50k) using a tuned and validated Two-class boosted Decision tree model. The trained model is converted to an Azure web service.
 
 Two images below are the ML studio pipelines
-1. The training experiment
-2. The predictive experiment (web service)
+#### The training experiment
+![Training experiment](https://github.com/rajtulluri/End-to-End-Azure-ML-pipeline/blob/master/Images/training.jpeg)
+
+#### The predictive experiment (web service)
+![Web service](https://github.com/rajtulluri/End-to-End-Azure-ML-pipeline/blob/master/Images/webservice.jpeg)
 
 The Web service offered by Azure is a paid service, hence the API no longer exists. Please create your own Azure Web service based on the image and save the URL and API key in the respective files under resources folder.
 
